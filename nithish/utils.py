@@ -94,7 +94,7 @@ def getMPrecAtK( yGold, yPred, k ):
 			# Find all data points for which this class was predicted
 			# Create a new array so that the array yPredNew is unaffected since it has to be reused
 			winsThisClass = np.zeros( yPredNew.shape )
-			winsThisClass[ yPredNew == cls ] = 1
+			winsThisClass[ yPredNew == cls+1 ] = 1
 			# Remove cases of data points for which this is not the correct error class
 			winsThisClass[ ~pointsWithThisErrorClass, : ] = 0
 			# How many times did we correctly predict this error class at the blah-th position?

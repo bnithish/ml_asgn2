@@ -1,5 +1,7 @@
 import numpy as np
 from numpy import random as rand
+import test
+#  import klwp
 
 # DO NOT CHANGE THE NAME OF THIS METHOD OR ITS INPUT OUTPUT BEHAVIOR
 
@@ -26,12 +28,12 @@ def findErrorClass( X, k ):
 	n = X.shape[0]
 	# Load and unpack a dummy model to see an example of how to make predictions
 	# The dummy model simply stores the error classes in decreasing order of their popularity
-	npzModel = np.load( "model.npz" )
-	model = npzModel[npzModel.files[0]]
+	#  npzModel = np.load( "model.npz" )
+	#  model = npzModel[npzModel.files[0]]
 	# Let us predict a random subset of the 2k most popular labels no matter what the test point
-	shortList = model[0:2*k]
+	#  shortList = model[0:2*k]
 	# Make sure we are returning a numpy nd-array and not a numpy matrix or a scipy sparse matrix
-	yPred = np.zeros( (n, k) )
-	for i in range( n ):
-		yPred[i,:] = rand.permutation( shortList )[0:k]
-	return yPred
+	#  yPred = np.zeros( (n, k) )
+	#  for i in range( n ):
+		#  yPred[i,:] = rand.permutation( shortList )[0:k]
+	return test.doit(X,k)
